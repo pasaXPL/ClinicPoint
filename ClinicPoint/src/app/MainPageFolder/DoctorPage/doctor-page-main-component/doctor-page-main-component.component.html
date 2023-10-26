@@ -1,0 +1,229 @@
+<!-- component -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+  <div class="text-center pb-12">
+      <h2 class="text-base font-bold text-indigo-600">
+          We have the best doctors and Physicians
+      </h2>
+      <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900">
+          Check our awesome team members
+      </h1>
+  </div>
+  <div class="grid grid-cols-3 gap-6">
+      <div class="cursor-pointer w-full bg-white shadow-xl rounded-lg p-8 flex flex-col justify-center items-center hover:scale-105 hover:shadow-lg transition" *ngFor="let physician of physicianList" (click)="openViewPhysicianModal(physician)">
+          <!--<div class="mb-8">
+              <img class="object-center object-cover rounded-full h-36 w-36" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="photo">
+          </div>-->
+          <div class="text-center">
+              <p class="text-xl text-gray-700 font-bold mb-2">{{physician.firstname + ' ' + physician.lastname}}</p>
+              <p class="text-base text-gray-400 font-bold">{{physician.status}}</p>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+
+<div data-te-modal-init
+  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+  id="viewPatientModal" data-te-keyboard="false" tabindex="-1" aria-labelledby="viewPatientLabel" aria-hidden="true">
+  <div data-te-modal-dialog-ref
+    class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px]">
+
+    <div
+      class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+      <div
+        class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+        <!--Modal title-->
+        <h5 class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200" id="viewPatientLabel">
+          View Patient Details
+        </h5>
+        <!--Close button-->
+        <button type="button"
+          class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+          data-te-modal-dismiss aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!--Modal body-->
+      <div data-te-modal-body-ref class="relative p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 w-full">
+          <div class="relative m-3">
+            <label for="txtbxSelectedFirstName" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+              First Name
+            </label>
+
+            <div class="relative">
+
+              <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+                <div
+                  class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <input id="txtbxSelectedFirstName" name="txtbxSelectedFirstName" type="text" placeholder="Enter First Name" value=""
+                [(ngModel)]="selectedPhysician.firstname"
+                class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+            </div>
+          </div>
+
+          <div class="relative m-3">
+            <label for="txtbxSelectedLastname" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+              Last Name
+            </label>
+
+            <div class="relative">
+
+              <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+                <div
+                  class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <input id="txtbxSelectedLastname" name="txtbxSelectedLastname" type="text" placeholder="Enter Last Name" value=""
+                [(ngModel)]="selectedPhysician.lastname"
+                class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+            </div>
+          </div>
+
+          <div class="relative m-3">
+            <label for="txtbxSelectedContactNo" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+              Contact Number
+            </label>
+            <div class="relative">
+
+              <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+                <div
+                  class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <input id="txtbxSelectedContactNo" name="txtbxSelectedContactNo" type="text" placeholder="Enter Contact Number" value=""
+                [(ngModel)]="selectedPhysician.contactno"
+                class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+            </div>
+          </div>
+
+          <div class="relative m-3">
+            <label for="txtbxSelectedEmail" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+              Email
+            </label>
+
+            <div class="relative">
+
+              <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+                <div
+                  class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <input id="txtbxSelectedEmail" name="txtbxSelectedEmail" type="text" placeholder="Enter Email" value=""
+                [(ngModel)]="selectedPhysician.email"
+                class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+            </div>
+          </div>
+
+          <div class="relative m-3" data-te-datepicker-init>
+            <label for="txtbxSelectedBirthdate" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+              Birthdate
+            </label>
+
+            <div class="relative">
+
+              <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+                <div
+                  class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <input id="txtbxSelectedBirthdate" name="txtbxSelectedBirthdate" type="text" placeholder="Enter Birthdate" value=""
+                [(ngModel)]="selectedPhysician.birthdate" data-te-datepicker-toggle-ref data-te-datepicker-toggle-button-ref
+                class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+            </div>
+
+          </div>
+
+          <div class="relative m-3">
+            <label for="selectedgender" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+              Select Gender
+            </label>
+            <select id="selectedgender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" [(ngModel)]="selectedPhysician.gender" name="selectedgender">
+              <option selected value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div class="relative m-3 col-span-1 md:col-span-2">
+            <label for="txtbxSelectedAddress" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+              Address
+            </label>
+
+            <div class="relative">
+
+              <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+                <div
+                  class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+                  <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <input id="txtbxSelectedAddress" name="txtbxSelectedAddress" type="text" placeholder="Enter Address" value=""
+                [(ngModel)]="selectedPhysician.address"
+                class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!--Modal footer-->
+      <div
+        class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+        <button type="button"
+          class="inline-block rounded bg-primary-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+          data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+          Close
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="hidden">
+  <button #openViewPhysician data-te-toggle="modal" data-te-target="#viewPatientModal"></button>
+  <button #closeModals data-te-modal-dismiss aria-label="Close"></button>
+</div>

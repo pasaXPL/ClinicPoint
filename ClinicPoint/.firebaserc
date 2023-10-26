@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "clinicpoint-c1afd": {
+      "hosting": {
+        "ClinicPoint": [
+          "clinicpoint-c1afd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "clinicpoint-c1afd"
+  }
+}

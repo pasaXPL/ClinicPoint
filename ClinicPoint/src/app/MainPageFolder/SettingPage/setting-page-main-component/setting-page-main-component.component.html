@@ -1,0 +1,171 @@
+<div class="p-10">
+  <p class="text-gray-700 text-4xl font-semibold">Profile</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 w-full">
+    <div class="relative m-3">
+      <label for="txtbxFirstName" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+        First Name
+      </label>
+
+      <div class="relative">
+
+        <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+          <div
+            class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+            <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <input id="txtbxFirstname" name="txtbxFirstName" type="text" placeholder="Enter First Name" value=""
+          [(ngModel)]="selected.firstname"
+          class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+      </div>
+    </div>
+
+    <div class="relative m-3">
+      <label for="txtbxLastname" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+        Last Name
+      </label>
+
+      <div class="relative">
+
+        <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+          <div
+            class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+            <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <input id="txtbxLastname" name="txtbxLastname" type="text" placeholder="Enter Last Name" value=""
+          [(ngModel)]="selected.lastname"
+          class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+      </div>
+    </div>
+
+    <div class="relative m-3">
+      <label for="txtbxContactNo" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+        Contact Number
+      </label>
+      <div class="relative">
+
+        <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+          <div
+            class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+            <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <input id="txtbxContactNo" name="txtbxContactNo" type="text" placeholder="Enter Contact Number" value=""
+          [(ngModel)]="selected.contactno"
+          class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+      </div>
+    </div>
+
+    <div class="relative m-3">
+      <label for="txtbxEmail" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+        Email
+      </label>
+
+      <div class="relative">
+
+        <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+          <div
+            class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+            <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <input id="txtbxEmail" name="txtbxEmail" type="text" placeholder="Enter Email" value=""
+          [(ngModel)]="selected.email"
+          class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+      </div>
+    </div>
+
+    <div class="relative m-3" data-te-datepicker-init>
+      <label for="txtbxBirthdate" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+        Birthdate
+      </label>
+
+      <div class="relative">
+
+        <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+          <div
+            class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+            <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <input id="txtbxBirthdate" name="txtbxBirthdate" type="text" placeholder="Enter Birthdate" value=""
+          [(ngModel)]="selected.birthdate" data-te-datepicker-toggle-ref data-te-datepicker-toggle-button-ref
+          class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+      </div>
+
+    </div>
+
+    <div class="relative m-3">
+      <label for="gender" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+        Select Gender
+      </label>
+      <select id="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" [(ngModel)]="selected.gender" name="gender">
+        <option selected value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="relative m-3 col-span-1 md:col-span-2">
+      <label for="txtbxAddress" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+        Address
+      </label>
+
+      <div class="relative">
+
+        <div class="absolute flex border border-transparent left-0 top-0 h-full w-10">
+          <div
+            class="flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full">
+            <svg viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <input id="txtbxAddress" name="txtbxAddress" type="text" placeholder="Enter Address" value=""
+          [(ngModel)]="selected.address"
+          class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12">
+
+      </div>
+    </div>
+
+    <div class="relative m-3 col-span-1 md:col-span-2">
+      <button data-te-ripple-init data-te-ripple-color="light" (click)="onSave()"
+         class="w-full inline-block rounded bg-primary px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" >Save Profile</button>
+    </div>
+
+  </div>
+
+
+  <p class="text-gray-700 text-4xl font-semibold my-5">Account</p>
+  <div class="m-3 col-span-1 md:col-span-2">
+    <button data-te-ripple-init data-te-ripple-color="light"
+       class="w-full inline-block rounded bg-primary px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" >Change Password</button>
+  </div>
+</div>
