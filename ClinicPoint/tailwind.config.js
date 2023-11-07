@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      'pri': '#179182'
+    }
   },
   darkMode: "class",
   plugins: [require("tw-elements/dist/plugin.cjs")]
